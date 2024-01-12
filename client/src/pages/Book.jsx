@@ -29,15 +29,23 @@ const Book = () => {
 	const book = data.book
 
 	return (
-		<div>
-			<h1>{book.title}</h1>
-			<p>Yazar: {book.author}</p>
-			<p>Yayın Yılı: {book.publicationYear}</p>
-			<p>Tür: {book.genre}</p>
+		<div className="kitap-detay">
+			<div className="book-card">
+				<h1 className="book-title">{book.title}</h1>
+				<p className="book-detail">Yazar: {book.author}</p>
+				<p className="book-detail">Yayın Yılı: {book.publicationYear}</p>
+				<p className="book-detail">Tür: {book.genre}</p>
 
-			<button onClick={() => navigate('/home')}>Anasayfa</button>
-			<button onClick={() => navigate(`/book/${id}/update`)}>Güncelle</button>
-			<button onClick={handleDelete}>Sil</button>
+				<button className="book-button" onClick={() => navigate('/home')}>
+					Anasayfa
+				</button>
+				<button className="book-button" onClick={() => navigate(`/book/${id}/update`)}>
+					Güncelle
+				</button>
+				<button className="book-button" onClick={handleDelete}>
+					Sil
+				</button>
+			</div>
 		</div>
 	)
 }

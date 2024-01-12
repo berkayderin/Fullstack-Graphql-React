@@ -45,3 +45,532 @@
 	font-weight: bold;
 	padding: 10px;
 }
+
+/* register */
+
+.register-forms {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.register-form {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.register-form input {
+	width: 300px;
+	height: 40px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	margin: 10px;
+	padding: 10px;
+}
+
+.register-form button {
+	width: 300px;
+	height: 40px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	margin: 10px;
+	padding: 10px;
+	background-color: #616161;
+}
+
+.register-h1 {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+
+	font-size: 50px;
+	font-weight: bold;
+	padding: 10px;
+}
+
+/* home */
+
+.menu {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	padding: 20px;
+	gap: 5px;
+}
+
+.menu1-input1 {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	padding: 20px;
+	gap: 5px;
+}
+.menu input {
+	width: 200px;
+	outline: none;
+	padding: 5px;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+.menu button {
+	background-color: #ccc;
+	color: black;
+	font-size: 1rem;
+	cursor: pointer;
+	padding: 4px;
+	border-radius: 5px;
+	width: 100px;
+}
+.menu button:hover {
+	background-color: #616161;
+	color: white;
+}
+.logout {
+	width: 150px;
+}
+
+.menu h1 {
+	font-size: 2rem;
+	font-weight: bold;
+	font-style: italic;
+	text-shadow: 0 1px 2px rgb(255, 255, 255);
+}
+
+/* menu mobil uyum */
+
+@media screen and (max-width: 768px) {
+	.menu {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 20px;
+	}
+	.menu-input {
+		width: 300px;
+		outline: none;
+		padding: 5px;
+		border-radius: 5px;
+	}
+}
+
+/* kitap ana sayfa */
+.container-main {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+.container-left {
+	flex: 0 0 30%;
+	padding: 20px;
+}
+
+.container-right {
+	flex: 0 0 70%;
+	padding: 20px;
+}
+
+.menu-input {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+}
+
+.menu-input input,
+.menu-input button {
+	width: 100%;
+	padding: 5px;
+	margin-bottom: 10px;
+}
+.menu-input button {
+	background-color: #ccc;
+	color: black;
+	font-size: 1rem;
+	cursor: pointer;
+	padding: 3px;
+	border-radius: 5px;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.left-div,
+.container1,
+.container2 {
+	margin-bottom: 20px;
+}
+.container1 button {
+	background-color: #ccc;
+	color: black;
+	font-size: 1rem;
+	cursor: pointer;
+	padding: 3px;
+	margin: 2px;
+	border-radius: 5px;
+	width: 100px;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+li {
+	background-color: #f9f9f9;
+	border: 1px solid #ddd;
+	margin-bottom: 10px;
+	padding: 15px;
+	border-radius: 8px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	color: black;
+}
+
+a {
+	text-decoration: none;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+span {
+	margin-bottom: 5px;
+}
+
+span:last-child {
+	margin-bottom: 0;
+}
+
+/* kitap ana sayfa mobil uyum */
+
+@media screen and (max-width: 768px) {
+	.container-main {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+	}
+	.container-left {
+		flex: 0 0 100%;
+		padding: 20px;
+	}
+	.container-right {
+		flex: 0 0 100%;
+		padding: 20px;
+	}
+	.menu-input {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 10px;
+	}
+	.menu-input input,
+	.menu-input button {
+		width: 100%;
+		padding: 5px;
+		margin-bottom: 10px;
+	}
+	.menu-input button {
+		background-color: #ccc;
+		color: black;
+		font-size: 1rem;
+		cursor: pointer;
+		padding: 3px;
+		border-radius: 5px;
+		width: 100%;
+		margin-bottom: 10px;
+	}
+	.left-div,
+	.container1,
+	.container2 {
+		margin-bottom: 20px;
+	}
+	.container1 button {
+		background-color: #ccc;
+		color: black;
+		font-size: 1rem;
+		cursor: pointer;
+		padding: 3px;
+		margin: 2px;
+		border-radius: 5px;
+		width: 100px;
+	}
+	ul {
+		list-style-type: none;
+		padding: 0;
+	}
+	li {
+		background-color: #f9f9f9;
+		border: 1px solid #ddd;
+		margin-bottom: 10px;
+		padding: 15px;
+		border-radius: 8px;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+		color: black;
+	}
+	a {
+		text-decoration: none;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	span {
+		margin-bottom: 5px;
+	}
+	span:last-child {
+		margin-bottom: 0;
+	}
+}
+
+/* kitap önerme sayfası */
+.kitap-oner {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.kitap-oner h1 {
+	font-size: 3rem;
+	font-weight: bold;
+}
+.kitap-oner ul {
+	list-style-type: none;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+	max-width: 1000px;
+}
+
+.kitap-oner li {
+	background-color: #f9f9f9;
+	border: 1px solid #ddd;
+	padding: 15px;
+	border-radius: 8px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.kitap-oner p {
+	margin: 0 0 10px 0;
+}
+
+.kitap-oner p:last-child {
+	margin-bottom: 0;
+}
+
+/* kitap önerme sayfası mobil uyum */
+
+@media screen and (max-width: 768px) {
+	.kitap-oner h1 {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		font-size: 2.5rem;
+		font-weight: bold;
+	}
+	.kitap-oner ul {
+		list-style-type: none;
+		padding: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 20px;
+	}
+	.kitap-oner li {
+		background-color: #f9f9f9;
+		border: 1px solid #ddd;
+		margin-bottom: 10px;
+		padding: 15px;
+		border-radius: 8px;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+		max-width: 1000px;
+	}
+	.kitap-oner p {
+		margin: 0 0 10px 0;
+	}
+	.kitap-oner p:last-child {
+		margin-bottom: 0;
+	}
+}
+
+/* kitap ekleme sayfası */
+
+.form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+.form-container {
+	width: 100%;
+	max-width: 1000px;
+	padding: 20px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	border-radius: 8px;
+	background-color: #f9f9f9;
+}
+
+.form-title {
+	text-align: center;
+	margin-bottom: 20px;
+	color: black;
+	font-size: 2rem;
+}
+
+.book-form {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.form-input {
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+}
+
+.form-input:focus {
+	outline: none;
+	border-color: #aaa;
+}
+
+.error-message {
+	color: red;
+	margin-top: -10px;
+	margin-bottom: 10px;
+}
+
+.submit-button {
+	padding: 10px;
+	background-color: #4caf50;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+	background-color: #45a049;
+}
+
+/* kitap detay sayfası */
+
+.kitap-detay {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+.book-card {
+	width: 100%;
+	max-width: 500px;
+	margin: 20px auto;
+	padding: 20px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	border-radius: 8px;
+	background-color: #f9f9f9;
+	text-align: start;
+}
+
+.book-title {
+	margin-bottom: 20px;
+	color: black;
+	font-size: 2rem;
+}
+
+.book-detail {
+	margin: 10px 0;
+	color: black;
+	font-size: 1rem;
+}
+
+.book-button {
+	padding: 10px;
+	margin: 10px;
+	background-color: #4caf50;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.book-button:hover {
+	background-color: #45a049;
+}
+
+/* kitap guncelleme sayfası */
+.kitap-guncelle {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+.kitap-guncelle-container {
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 20px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	border-radius: 8px;
+	background-color: #f9f9f9;
+	text-align: center;
+}
+
+.form-title {
+	margin-bottom: 20px;
+}
+
+.kitap-guncelle-form {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.form-input {
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+}
+
+.form-input:focus {
+	outline: none;
+	border-color: #aaa;
+}
+
+.form-button {
+	padding: 10px;
+	margin: 10px 0; /* Butonlar arası ve üstten boşluk */
+	background-color: #4caf50;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.form-button:hover {
+	background-color: #45a049;
+}

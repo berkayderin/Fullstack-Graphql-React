@@ -1,6 +1,6 @@
+import { Link, useNavigate } from 'react-router-dom'
 import { gql, useMutation } from '@apollo/client'
 
-import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 
 const REGISTER_USER = gql`
@@ -30,11 +30,19 @@ const Register = () => {
 	}
 
 	return (
-		<form onSubmit={handleSubmit}>
-			<input value={username} onChange={(e) => setUsername(e.target.value)} type="text" placeholder="Username" />
-			<input value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" />
-			<button type="submit">Register</button>
-		</form>
+		<div className="register-forms">
+			<h1 className="register-h1">Kayıt Ol</h1>
+			<form onSubmit={handleSubmit} className="register-form">
+				<input value={username} onChange={(e) => setUsername(e.target.value)} type="text" placeholder="E-posta" />
+				<input value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Şifre" />
+				<button type="submit" className="register-form button">
+					Kayıt Ol
+				</button>
+			</form>
+			<Link to="/login">
+				<span style={{ fontSize: '0.7rem' }}>Kayıtlı mısın ? Giriş Yap</span>
+			</Link>
+		</div>
 	)
 }
 

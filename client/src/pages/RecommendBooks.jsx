@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 
 import { GET_BOOKS } from '../graphql/query'
+import { Link } from 'react-router-dom'
 import { useQuery } from '@apollo/client'
 
 const RecommendBooks = () => {
@@ -18,16 +19,21 @@ const RecommendBooks = () => {
 	if (error) return <p>Error :(</p>
 
 	return (
-		<div>
+		<div className="kitap-oner">
 			<h1>Önerilen Kitap</h1>
 			{recommendedBook && (
-				<div>
-					<p>Kitap Adı: {recommendedBook.title}</p>
-					<p>Yazar: {recommendedBook.author}</p>
-					<p>Yayın Yılı: {recommendedBook.publicationYear}</p>
-					<p>Tür: {recommendedBook.genre}</p>
-				</div>
+				<ul>
+					<li>
+						<p>Kitap Adı: {recommendedBook.title}</p>
+						<p>Yazar: {recommendedBook.author}</p>
+						<p>Yayın Yılı: {recommendedBook.publicationYear}</p>
+						<p>Tür: {recommendedBook.genre}</p>
+					</li>
+				</ul>
 			)}
+			<button style={{ textDecoration: 'underline' }}>
+				<Link to="/home">Anasayfaya Dön</Link>
+			</button>
 		</div>
 	)
 }

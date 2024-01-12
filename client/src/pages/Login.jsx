@@ -1,8 +1,7 @@
+import { Link, useNavigate } from 'react-router-dom'
 import { gql, useMutation } from '@apollo/client'
 
-import { Input } from '@nextui-org/react'
 import { useAuth } from '../context/AuthContext'
-import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 
 const LOGIN_USER = gql`
@@ -12,9 +11,6 @@ const LOGIN_USER = gql`
 `
 
 const Login = () => {
-	const [isVisible, setIsVisible] = useState(false)
-	const toggleVisibility = () => setIsVisible(!isVisible)
-
 	const [username, setUsername] = useState('')
 	const [password, setPassword] = useState('')
 	const [login] = useMutation(LOGIN_USER)
@@ -47,7 +43,10 @@ const Login = () => {
 					placeholder="E-posta"
 				/>
 				<input value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Şifre" />
-				<button type="submit">Login</button>
+				<button type="submit">Giriş Yap</button>
+				<Link to="/register">
+					<span style={{ fontSize: '0.7rem' }}>Kayıtlı değil misin ? Kayıt Ol</span>
+				</Link>
 			</form>
 		</div>
 	)

@@ -48,19 +48,25 @@ const BookUpdate = () => {
 	if (error) return <p>Error :(</p>
 
 	return (
-		<div>
-			<h1>Kitabı Güncelle</h1>
-			<form onSubmit={handleSubmit(onSubmit)}>
-				<input {...register('title')} placeholder="Başlık" />
+		<div className="kitap-guncelle">
+			<div className="kitap-guncelle-container">
+				<h1 className="form-title">Kitabı Güncelle</h1>
+				<form onSubmit={handleSubmit(onSubmit)} className="kitap-guncelle-form">
+					<input {...register('title')} placeholder="Başlık" className="form-input" />
 
-				<input {...register('author')} placeholder="Yazar" />
+					<input {...register('author')} placeholder="Yazar" className="form-input" />
 
-				<input type="number" {...register('publicationYear')} placeholder="Yayın Yılı" />
-				<input {...register('genre')} placeholder="Tür" />
+					<input type="number" {...register('publicationYear')} placeholder="Yayın Yılı" className="form-input" />
+					<input {...register('genre')} placeholder="Tür" className="form-input" />
 
-				<button type="submit">Güncelle</button>
-				<button onClick={() => navigate(`/book/${id}`)}>Geri Gel</button>
-			</form>
+					<button type="submit" className="form-button">
+						Güncelle
+					</button>
+					<button onClick={() => navigate(`/book/${id}`)} className="form-button">
+						Geri Gel
+					</button>
+				</form>
+			</div>
 		</div>
 	)
 }
