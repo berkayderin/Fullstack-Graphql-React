@@ -1,0 +1,23 @@
+{
+	"name": "server",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"compile": "tsc",
+		"start": "npm run compile && node ./dist/index.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"type": "module",
+	"dependencies": {
+		"@apollo/server": "^4.10.0",
+		"graphql": "^16.8.1",
+		"mongoose": "^8.0.4"
+	},
+	"devDependencies": {
+		"@types/node": "^20.11.0",
+		"typescript": "^5.3.3"
+	}
+}
