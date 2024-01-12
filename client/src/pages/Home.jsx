@@ -1,10 +1,16 @@
+import { Link, useNavigate } from 'react-router-dom'
+
 import { GET_BOOKS } from '../graphql/query'
-import { Link } from 'react-router-dom'
+import { useAuth } from '../context/AuthContext'
 import { useQuery } from '@apollo/client'
 import { useState } from 'react'
 
 const Home = () => {
 	const { loading, error, data } = useQuery(GET_BOOKS)
+
+	const { logout } = useAuth()
+
+	const navigate = useNavigate()
 
 	const [search, setSearch] = useState('')
 	const [genreFilter, setGenreFilter] = useState('')
@@ -31,6 +37,12 @@ const Home = () => {
 		})
 		setFilteredBooks(filtered)
 	}
+
+	const handleLogout = () => {
+		logout()
+		navigate('/login')
+	}
+
 	return (
 		<>
 			{loading && <p>Loading...</p>}
@@ -55,6 +67,7 @@ const Home = () => {
 			<button>
 				<Link to="/recommend-books">Kitap Öner</Link>
 			</button>
+			<button onClick={handleLogout}>Çıkış Yap</button>
 
 			<p>Bulunan Kitaplar:</p>
 			<ul>

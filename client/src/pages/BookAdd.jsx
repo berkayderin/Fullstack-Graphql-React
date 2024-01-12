@@ -9,6 +9,7 @@ const BookAdd = () => {
 		handleSubmit,
 		formState: { errors }
 	} = useForm()
+	
 	const [addBook, { data, loading, error }] = useMutation(ADD_BOOK)
 	const navigate = useNavigate()
 
