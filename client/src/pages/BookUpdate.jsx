@@ -28,10 +28,15 @@ const BookUpdate = () => {
 	} = useForm({ mode: 'onChange' })
 
 	const onSubmit = async (formData) => {
-		console.log(formData) // Form verilerini logla
+		console.log(formData) 
 		try {
-			await updateBook({ variables: { id, ...formData } })
-			navigate(`/book/${id}`)
+			const updatedFormData = {
+				...formData,
+				publicationYear: parseInt(formData.publicationYear)
+			};
+	
+			await updateBook({ variables: { id, ...updatedFormData } });
+			navigate(`/book/${id}`);
 		} catch (error) {
 			console.error('Güncelleme işlemi başarısız', error)
 		}

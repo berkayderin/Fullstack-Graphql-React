@@ -1,35 +1,43 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose, { Schema, Document } from "mongoose";
 import bcrypt from "bcrypt";
 
 import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
 
-// MongoDB bağlantı URL'nizi buraya ekleyin
-const MONGO_URL =
-  "mongodb+srv://zewodi:DAgkkJyG5yNLQeBh@cluster0.8t5rtcd.mongodb.net/?retryWrites=true&w=majority";
+const MONGO_URL = // mongo db url girilecek
+  mongoose
+    .connect(MONGO_URL)
+    .then(() => console.log("MongoDB bağlantısı başarılı"))
+    .catch((err) => console.error("MongoDB bağlantı hatası", err));
 
-mongoose
-  .connect(MONGO_URL)
-  .then(() => console.log("MongoDB bağlantısı başarılı"))
-  .catch((err) => console.error("MongoDB bağlantı hatası", err));
+interface IBook extends Document {
+  title: string;
+  author: string;
+  publicationYear: number;
+  genre: string;
+}
 
-// Book modelini genişlet
-const bookSchema = new Schema({
-  title: String,
-  author: String,
-  publicationYear: Number, // Bu alanı ekleyin
+const bookSchema = new Schema<IBook>({
+  title: { type: String, required: true },
+  author: { type: String, required: true },
+  publicationYear: Number,
   genre: String,
 });
 
-const Book = mongoose.model("Book", bookSchema);
+const Book = mongoose.model<IBook>("Book", bookSchema);
 
-const userSchema = new Schema({
-  username: String,
-  password: String,
+interface IUser extends Document {
+  username: string;
+  password: string;
+}
+
+const userSchema = new Schema<IUser>({
+  username: { type: String, required: true },
+  password: { type: String, required: true },
 });
-const User = mongoose.model("User", userSchema);
 
-// GraphQL şemalarını genişlet
+const User = mongoose.model<IUser>("User", userSchema);
+
 const typeDefs = `#graphql
     type Book {
         id: ID!
@@ -60,7 +68,6 @@ const typeDefs = `#graphql
 
 `;
 
-// Resolver fonksiyonlarını güncelle
 const resolvers = {
   Query: {
     books: () => Book.find().exec(),
@@ -99,7 +106,6 @@ const resolvers = {
   },
 };
 
-// Apollo Server'ı başlat
 const server = new ApolloServer({
   typeDefs,
   resolvers,

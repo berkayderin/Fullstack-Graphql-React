@@ -2,26 +2,23 @@ import mongoose, { Schema } from "mongoose";
 import bcrypt from "bcrypt";
 import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
-// MongoDB bağlantı URL'nizi buraya ekleyin
 const MONGO_URL = "mongodb+srv://zewodi:DAgkkJyG5yNLQeBh@cluster0.8t5rtcd.mongodb.net/?retryWrites=true&w=majority";
 mongoose
     .connect(MONGO_URL)
     .then(() => console.log("MongoDB bağlantısı başarılı"))
     .catch((err) => console.error("MongoDB bağlantı hatası", err));
-// Book modelini genişlet
 const bookSchema = new Schema({
-    title: String,
-    author: String,
-    publicationYear: Number, // Bu alanı ekleyin
+    title: { type: String, required: true },
+    author: { type: String, required: true },
+    publicationYear: Number,
     genre: String,
 });
 const Book = mongoose.model("Book", bookSchema);
 const userSchema = new Schema({
-    username: String,
-    password: String,
+    username: { type: String, required: true },
+    password: { type: String, required: true },
 });
 const User = mongoose.model("User", userSchema);
-// GraphQL şemalarını genişlet
 const typeDefs = `#graphql
     type Book {
         id: ID!
@@ -51,7 +48,6 @@ const typeDefs = `#graphql
 	}
 
 `;
-// Resolver fonksiyonlarını güncelle
 const resolvers = {
     Query: {
         books: () => Book.find().exec(),
@@ -85,7 +81,6 @@ const resolvers = {
         },
     },
 };
-// Apollo Server'ı başlat
 const server = new ApolloServer({
     typeDefs,
     resolvers,
