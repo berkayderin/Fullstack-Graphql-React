@@ -2,7 +2,7 @@ import mongoose, { Schema } from "mongoose";
 import bcrypt from "bcrypt";
 import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
-const MONGO_URL = "mongodb+srv://zewodi:DAgkkJyG5yNLQeBh@cluster0.8t5rtcd.mongodb.net/?retryWrites=true&w=majority";
+const MONGO_URL = "mongodb+srv://zewodi:u52fNsMt8wefgV8Y@cluster0.bn64c0f.mongodb.net";
 mongoose
     .connect(MONGO_URL)
     .then(() => console.log("MongoDB bağlantısı başarılı"))
