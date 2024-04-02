@@ -4,11 +4,13 @@ import bcrypt from "bcrypt";
 import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
 
-const MONGO_URL = // mongo db url girilecek
-  mongoose
-    .connect(MONGO_URL)
-    .then(() => console.log("MongoDB bağlantısı başarılı"))
-    .catch((err) => console.error("MongoDB bağlantı hatası", err));
+const MONGO_URL =
+  "mongodb+srv://zewodi:u52fNsMt8wefgV8Y@cluster0.bn64c0f.mongodb.net";
+
+mongoose
+  .connect(MONGO_URL)
+  .then(() => console.log("MongoDB bağlantısı başarılı"))
+  .catch((err) => console.error("MongoDB bağlantı hatası", err));
 
 interface IBook extends Document {
   title: string;
