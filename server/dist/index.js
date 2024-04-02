@@ -1,5 +1,5 @@
 import mongoose, { Schema } from "mongoose";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
 const MONGO_URL = "mongodb+srv://zewodi:u52fNsMt8wefgV8Y@cluster0.bn64c0f.mongodb.net";
