@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "compile": "tsc",
-    "start": "npm run compile && node ./dist/index.js"
+    "start": "node ./dist/index.js"
   },
   "keywords": [],
   "author": "",
@@ -14,13 +13,7 @@
   "dependencies": {
     "@apollo/server": "^4.10.0",
     "bcrypt": "^5.1.1",
-    "bcryptjs": "^2.4.3",
     "graphql": "^16.8.1",
     "mongoose": "^8.0.4"
-  },
-  "devDependencies": {
-    "@types/bcrypt": "^5.0.2",
-    "@types/node": "^20.11.0",
-    "typescript": "^5.3.3"
   }
 }
